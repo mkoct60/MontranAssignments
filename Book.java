@@ -42,5 +42,5 @@ public class Book {
 	public double purchase_book(int no_of_copies) {
 		return this.total_cost(no_of_copies);
 	}
- 
+
 }
