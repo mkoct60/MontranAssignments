@@ -20,5 +20,4 @@ public class TimeMain {
 		System.out.print("Sum of the time1 is: ");
 		time3.showtime();
 	}
-
 }
