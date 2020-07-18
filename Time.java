@@ -28,6 +28,4 @@ public class Time {
 		return time2;
 	}
 	
-	
-	
 }
