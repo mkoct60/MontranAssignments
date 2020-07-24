@@ -14,22 +14,20 @@ public class EmployeeMain {
 		FileInputStreamUtil fileInputStreamUtil=new FileInputStreamUtil();
 		FileOutputStreamUtil fileOutputStreamUtil=new FileOutputStreamUtil();
 		Scanner scanner=new Scanner(System.in);
-		int tempEmployeeID;
-		double temp_salary;
-		String employee_name,orgEmp_id,org_salary,filepath="D:/myfile.txt";
+		int emp_id;
+		double salary;
+		String employee_name,filepath="D:/myfile.txt";
 		byte[] data;
 		File file=new File(filepath);
 		
 		System.out.print("Enter Employee ID: ");
-		tempEmployeeID=scanner.nextInt();
-		orgEmp_id="Employee ID: "+tempEmployeeID;
+		emp_id=scanner.nextInt();
 		scanner.nextLine();
 		System.out.print("Enter the Employee Name: ");
-		employee_name="Employee Name: "+scanner.nextLine();
+		employee_name=scanner.nextLine();
 		System.out.print("Enter Employee Salary: ");
-		temp_salary=scanner.nextDouble();
-		org_salary="Salary; "+temp_salary;
-		data=(orgEmp_id+" "+employee_name+" "+org_salary).getBytes();
+		salary=scanner.nextDouble();
+		data=("Employee ID: "+emp_id+" Employee Name: "+employee_name+" Salary"+salary).getBytes();
 		fileOutputStreamUtil.writeDataIntoFile(file, data);
 		
 		//reading data from file
