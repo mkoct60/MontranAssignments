@@ -19,7 +19,7 @@ public class EmployeeMain {
 		List<Employee> emplsit = new ArrayList<Employee>();
 		int emp_id;
 		double salary;
-		String emp_name,yesorno;
+		String emp_name, yesorno;
 		boolean result;
 
 		do {
@@ -62,7 +62,7 @@ public class EmployeeMain {
 					emp_name = scanner.nextLine();
 					System.out.print("Enter Employee Salary: ");
 					salary = scanner.nextDouble();
-					employee = new Employee(0, salary,emp_name);
+					employee = new Employee(0, salary, emp_name);
 					arrayofemp[i] = employee;
 				}
 				result = employeeUtil.addAllEmployee(arrayofemp);
@@ -102,7 +102,10 @@ public class EmployeeMain {
 				System.out.print("Enter Employee id: ");
 				emp_id = scanner.nextInt();
 				employee = employeeUtil.getEmployeeById(emp_id);
-				System.out.println(employee);
+				if (employee == null)
+					System.out.print("Employee Not Found!!!");
+				else
+					System.out.println(employee);
 				break;
 			case 6:
 				System.out.print("Thank You!!!");
@@ -111,6 +114,7 @@ public class EmployeeMain {
 			default:
 				break;
 			}
+			System.out.print("\n");
 			System.out.print("Do you want to continue(Yes/no)?: ");
 			yesorno = scanner.next();
 		} while (yesorno.toLowerCase().equals("yes"));
