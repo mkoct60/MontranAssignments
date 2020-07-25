@@ -49,7 +49,7 @@ public class EmployeeUtilCollection {
 		for(Employee emp:employeeList) {
 			if(emp.getEmp_id()==emp_id) {
 				employeeList.remove(emp);
-				return emp;
+				return emp; 
 			}
 		}
 		return null;
