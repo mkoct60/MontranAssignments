@@ -27,6 +27,7 @@ public class EmployeeMain {
 			for (Employee emp : emplsit) {
 				if (emp != null)
 					System.out.println(emp);
+				System.out.print("\n");
 			}
 			System.out.println("1. Add Single Employee.");
 			System.out.println("2. Add Multiple Employee.");
@@ -116,4 +117,5 @@ public class EmployeeMain {
 
 		scanner.close();
 	}
+
 }
