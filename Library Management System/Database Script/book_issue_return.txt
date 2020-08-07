@@ -1,0 +1,21 @@
+create table book_issue_return(
+issue_serial_number number(10),
+book_code number,
+member_id number,
+date_of_issue date DEFAULT sysdate,
+date_of_return date DEFAULT sysdate,
+CONSTRAINTS book_issue_pkey_constraint PRIMARY KEY(issue_serial_number),
+CONSTRAINTS book_issue_bcode_fkey FOREIGN KEY(book_code) REFERENCES book_master(book_code),
+CONSTRAINTS book_issue_mcode_fkey FOREIGN KEY(member_id) REFERENCES member_master(member_id)
+);
+
+insert into book_issue_return(issue_serial_number,book_code,member_id) values(5423647892,1,1);
+insert into book_issue_return(issue_serial_number,book_code,member_id) values(5423657892,2,2);
+insert into book_issue_return(issue_serial_number,book_code,member_id) values(5423617892,3,3);
+insert into book_issue_return(issue_serial_number,book_code,member_id) values(5423627892,4,4);
+insert into book_issue_return(issue_serial_number,book_code,member_id) values(5423537892,5,5);
+insert into book_issue_return(issue_serial_number,book_code,member_id) values(5423547892,6,6);
+insert into book_issue_return(issue_serial_number,book_code,member_id) values(5423557892,7,7);
+insert into book_issue_return(issue_serial_number,book_code,member_id) values(5423567892,8,8);
+insert into book_issue_return(issue_serial_number,book_code,member_id) values(5423577892,9,9);
+insert into book_issue_return(issue_serial_number,book_code,member_id) values(5423587892,10,10);
