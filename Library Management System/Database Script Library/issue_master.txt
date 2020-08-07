@@ -1,0 +1,16 @@
+create table issue_master(
+issue_serial_no varchar(20),
+student_faculty_id varchar(20),
+book_id varchar(20),
+book_issue_date date DEFAULT sysdate,
+book_return_date date DEFAULT sysdate,
+CONSTRAINTS issue_master_pkey_constraint PRIMARY KEY(issue_serial_no),
+CONSTRAINTS studentfaculty_fkey_constraint FOREIGN KEY(student_faculty_id) REFERENCES student_faculty_master(student_faculty_id),
+CONSTRAINTS book_id_fkey_constraint FOREIGN KEY(book_id) REFERENCES book_master(book_id),
+CONSTRAINT fkey_like_constraint CHECK(student_faculty_id LIKE 'M%'),
+CONSTRAINTS book_id_like_constraints CHECK(book_id LIKE 'B%'),
+CONSTRAINTS serial_no_like_constraints CHECK(issue_serial_no LIKE 'S%')
+);
+
+insert into issue_master(issue_serial_no,student_faculty_id,book_id) values('S12456844','M0001','B0001');
+
