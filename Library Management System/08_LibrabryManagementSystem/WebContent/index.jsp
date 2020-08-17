@@ -42,6 +42,10 @@ td {
 	<h3>Library Book Details</h3>
 	<hr>
 	<table border="1" style="text-align: center; margin: 0px auto;">
+	
+		<%
+			if (request.getAttribute("issuedbooklist") != null && !request.getAttribute("issuedbooklist").toString().equals("[]")) {
+		%>
 		<tr>
 			<th>Issue Serial No</th>
 			<th>Member Code</th>
@@ -52,9 +56,6 @@ td {
 			<th>Date of Issue</th>
 			<th>Date of Return</th>
 		</tr>
-		<%
-			if (request.getAttribute("issuedbooklist") != null) {
-		%>
 		<logic:iterate name="issuedbooklist" id="allIssuedBook">
 			<tr>
 				<td><bean:write name="allIssuedBook" property="issue_serial_no" /></td>
@@ -79,6 +80,8 @@ td {
 			</tr>
 		</logic:iterate>
 		<%
+			}else{
+				out.print("No Record Found.! ");
 			}
 		%>
 	</table>
