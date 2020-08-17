@@ -48,6 +48,7 @@ public class BookIssueAction extends Action {
 			} catch (NullPointerException e) {
 				ActionRedirect redirect = new ActionRedirect(mapping.findForward("working"));
 				redirect.addParameter("error", "No Member found.");
+				bookIssueForm.setName("");
 				return redirect;
 			}
 		}
@@ -65,6 +66,8 @@ public class BookIssueAction extends Action {
 			} catch (NullPointerException e) {
 				ActionRedirect redirect = new ActionRedirect(mapping.findForward("working"));
 				redirect.addParameter("error", "No Book Found.");
+				bookIssueForm.setBook_title("");
+				bookIssueForm.setBook_author("");
 				return redirect;
 			}
 		}
