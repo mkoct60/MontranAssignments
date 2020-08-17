@@ -1,0 +1,23 @@
+create table member_master(
+member_id varchar(20),
+membertype_id number,
+name varchar(30),
+book_limit  number,
+total_book_issued number,
+CONSTRAINTS member_master_pkey_constraint PRIMARY KEY(member_id),
+CONSTRAINTS membertype_id_fkey_constraint FOREIGN KEY(membertype_id) REFERENCES member_type(membertype_id),
+CONSTRAINTS total_book_issued_constraint CHECK(total_book_issued<=book_limit),
+CONSTRAINT pkey_like_constraint CHECK(member_id LIKE 'M%') 
+);
+
+
+insert into member_master values('M0001',1,'Sohan',5,0);
+insert into member_master values('M0002',1,'Mayank',5,0);
+insert into member_master values('M0003',1,'Anurag',5,0);
+insert into member_master values('M0004',1,'Pawan',5,0);
+insert into member_master values('M0005',2,'Vivek',25,0);
+insert into member_master values('M0006',1,'Patrick',5,0);
+insert into member_master values('M0007',1,'Pankaj',5,0);
+insert into member_master values('M0008',2,'Sandeep',25,0);
+insert into member_master values('M0009',1,'Elliyas',5,0);
+insert into member_master values('M0010',2,'Zaid',25,0);
