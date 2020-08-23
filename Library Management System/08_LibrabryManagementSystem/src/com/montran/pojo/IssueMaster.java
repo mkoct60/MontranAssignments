@@ -20,11 +20,11 @@ public class IssueMaster {
 	@Check(constraints = "LIKE 'S%'")
 	String issue_serial_no;
 	
-	@OneToOne(targetEntity = MemberMaster.class)
+	@ManyToOne(targetEntity = MemberMaster.class)
 	@JoinColumn(name = "member_id")
 	private MemberMaster memberMaster;
 	
-	@OneToOne(targetEntity = BookMaster.class)
+	@ManyToOne(targetEntity = BookMaster.class)
 	@JoinColumn(name = "book_id")
 	private BookMaster bookMaster;
 	
