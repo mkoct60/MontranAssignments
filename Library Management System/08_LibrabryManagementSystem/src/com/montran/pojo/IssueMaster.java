@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Check;
@@ -20,11 +21,11 @@ public class IssueMaster {
 	@Check(constraints = "LIKE 'S%'")
 	String issue_serial_no;
 	
-	@ManyToOne(targetEntity = MemberMaster.class)
+	@OneToMany(targetEntity = MemberMaster.class)
 	@JoinColumn(name = "member_id")
 	private MemberMaster memberMaster;
 	
-	@ManyToOne(targetEntity = BookMaster.class)
+	@OneToOne(targetEntity = BookMaster.class)
 	@JoinColumn(name = "book_id")
 	private BookMaster bookMaster;
 	
